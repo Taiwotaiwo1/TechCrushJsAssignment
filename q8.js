@@ -11,15 +11,15 @@ userTwo.age = 40;
 console.log(userOne.age); // 40
 
 // change userFour doesnot affect userThree with the help of spread operator
-let userThree = {name:"Amaka", age:22, address:{city: "Ibadan"}};
+let userOne = {name:"Amaka", age:22, address:{city: "Ibadan"}};
 //let userFour = {...userThree};
-let userFour = {...userThree, address:{...userThree.address}};
-userFour.age = 40;
-userFour.name = "kunle";
-userFour.address.city = "Lagos"
-console.log(userThree.age);
-console.log(userFour.age);
-console.log(userFour.name);
+let userTwo = {...userOne, address:{...userOne.address}};
+userTwo.age = 40;
+userTwo.name = "kunle";
+userTwo.address.city = "Lagos"
+console.log(userOne.age); // 22
+console.log(userTwo.age);  //40
+console.log(userTwo.name); //Kunle
 
-console.log(userThree.address.city);
-console.log(userFour.address.city);
+console.log(userOne.address.city); // Ibadan
+console.log(userTwo.address.city); // Lagos
